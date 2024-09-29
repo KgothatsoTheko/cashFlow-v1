@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
 import za.co.varsitycollege.st10092141.cashflow_v1.databinding.ActivityLandingBinding
 
 class Landing : AppCompatActivity() {
@@ -33,12 +34,11 @@ class Landing : AppCompatActivity() {
 
     }
 
+    //method to replace the default frame layout
     private fun replaceFragment(fragment : Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frameLayout, fragment)
         fragmentTransaction.commit()
-
-
     }
 }

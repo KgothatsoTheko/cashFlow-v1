@@ -45,7 +45,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:background="@color/white"
                 android:id="@+id/password3"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
+
                 android:hint="@string/enter_password"
                 android:layout_height="wrap_content">
             </com.google.android.material.textfield.TextInputEditText>
@@ -86,11 +88,13 @@
         android:gravity="center"
         android:layout_marginTop="20dp">
         <ImageView
+            android:id="@+id/google2"
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:layout_marginEnd="20dp"
             android:src="@drawable/google_icon"/>
         <ImageView
+            android:id="@+id/facebook2"
             android:layout_width="70dp"
             android:layout_height="100dp"
             android:src="@drawable/facebook_icon"/>

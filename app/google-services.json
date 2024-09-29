@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "524367252822",
+    "project_id": "fir-android-e6ac6",
+    "storage_bucket": "fir-android-e6ac6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524367252822:android:a4f8f6c14d3df419099af7",
+        "android_client_info": {
+          "package_name": "za.co.varsitycollege.st10092141.cashflow_v1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZ1HXW-p9Cxdvgf2jawYFadhJZjQCfS3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
