@@ -1,59 +1,61 @@
 package za.co.varsitycollege.st10092141.cashflow_v1
-
+//ST10092141 - Kgothaso Theko
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import android.widget.Toast
+import androidx.appcompat.widget.SwitchCompat
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Settings.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Settings : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
-    }
+        val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Settings.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Settings().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        //method to use switch button to push notification adapted from GeeksForGeeks
+        //https://www.geeksforgeeks.org/switch-in-kotlin/
+        //GeeksForGeeks
+        val sw1 = view.findViewById<SwitchCompat>(R.id.switch1)
+        sw1?.setOnCheckedChangeListener { _, isChecked ->
+            val message = if (isChecked) "Notification: ON" else "Notification: OFF"
+            Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+        }
+
+
+        //method and steps how to use spanner adapted from stackoverflow
+        //https://stackoverflow.com/a/11731630
+        //balaji
+        //https://stackoverflow.com/users/1564344/balaji
+        val spinnerLanguages: Spinner = view.findViewById(R.id.spinner_languages)
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        val adapter: ArrayAdapter<CharSequence> = ArrayAdapter.createFromResource(
+            requireContext(), // Get the correct context for a fragment
+            R.array.languages, // The array you have defined in strings.xml
+            android.R.layout.simple_spinner_item // The default layout for the spinner item
+        )
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        // Apply the adapter to the spinner
+        spinnerLanguages.adapter = adapter
+        // Add an item selected listener (optional, to show a Toast message when an item is selected)
+        spinnerLanguages.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedLanguage = parent.getItemAtPosition(position).toString()
+                Toast.makeText(requireContext(), "Selected: $selectedLanguage", Toast.LENGTH_SHORT).show()
             }
+            override fun onNothingSelected(parent: AdapterView<*>) {
+
+            }
+        }
+
+        return view // Return the inflated view
     }
 }

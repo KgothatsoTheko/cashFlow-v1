@@ -1,5 +1,5 @@
 package za.co.varsitycollege.st10092141.cashflow_v1
-
+//ST10092141 - Kgothatso theko
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -86,6 +86,9 @@ class SignIn : AppCompatActivity() {
         googleSignInLauncher.launch(signInIntent)
     }
 
+    //google sign in method adapted from Developers
+    //https://developer.android.com/identity/sign-in/credential-manager-siwg
+    //Developers
     private fun googleAuthForFirebase(account: GoogleSignInAccount) {
         val credentials = GoogleAuthProvider.getCredential(account.idToken, null)
         CoroutineScope(Dispatchers.IO).launch {
@@ -103,6 +106,9 @@ class SignIn : AppCompatActivity() {
         }
     }
 
+    //google sign in method adapted from Developers
+    //https://developer.android.com/identity/sign-in/credential-manager-siwg
+    //Developers
     private fun signInUser() {
         val email = emailEditText.text.toString().trim()
         val password = passwordEditText.text.toString().trim()
@@ -129,6 +135,8 @@ class SignIn : AppCompatActivity() {
         }
     }
 
+    //navigate to the landing page
+    //Kgothatso Theko
     private fun navigateToLanding() {
         val intent = Intent(this, Landing::class.java)
         startActivity(intent)

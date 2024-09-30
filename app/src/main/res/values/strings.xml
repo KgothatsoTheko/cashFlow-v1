@@ -22,4 +22,16 @@
     <string name="reports">Reports</string>
     <string name="add">add</string>
     <string name="coming_soon">Coming Soon</string>
+    <string name="text1">Please wait a moment as data is being fetched:</string>
+    <string name="view_transactions">View Transactions</string>
+    <string name="menu">dropDownMenuExample</string>
+    <string name="change_currency">Change currency</string>
+    <string name="push_notifications">Push notifications</string>
+    <string-array name="languages">
+        <item>Rand</item>
+        <item>Dollars</item>
+        <item>Euro</item>
+        <item>Yen</item>
+        <item>Pound</item>
+    </string-array>
 </resources>

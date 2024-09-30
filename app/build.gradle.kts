@@ -44,6 +44,24 @@ android {
 
 dependencies {
 
+    // ViewModel
+    implementation (libs.androidx.lifecycle.lifecycle.viewmodel.ktx)  // Use the latest version
+
+    // Other necessary AndroidX dependencies
+    implementation (libs.androidx.fragment.ktx)
+
+    implementation (libs.androidx.lifecycle.runtime.ktx)
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    // Coroutines for asynchronous operations
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    // Optional: OkHttp Logging Interceptor for debugging
+    implementation(libs.logging.interceptor)
+    implementation (libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.recyclerview)
+
     // Import the BoM for the Firebase platform
     implementation(platform(libs.firebase.bom))
     implementation (libs.play.services.auth)
@@ -53,6 +71,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.auth)
+    implementation(libs.androidx.preference)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

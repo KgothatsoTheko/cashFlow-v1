@@ -21,23 +21,20 @@ class Home : Fragment() {
         val settingsPage = view.findViewById<LinearLayout>(R.id.settingsPage)
         val reportsPage = view.findViewById<LinearLayout>(R.id.reportsPage)
 
-        // Setting click listeners for each LinearLayout to call replaceFragment
+        // Setting click listeners for each LinearLayout to call replaceFragment from landing activity
+        // Kgothatso Theko
         transactionPage.setOnClickListener {
             (activity as? Landing)?.replaceFragment(Transactions())
         }
-
 //        budgetPage.setOnClickListener {
 //            (activity as? Landing)?.replaceFragment(BudgetFragment())
 //        }
-
         settingsPage.setOnClickListener {
             (activity as? Landing)?.replaceFragment(Settings())
         }
-
         reportsPage.setOnClickListener {
             (activity as? Landing)?.replaceFragment(Reports())
         }
-
         return view
     }
     }

@@ -1,5 +1,6 @@
 package za.co.varsitycollege.st10092141.cashflow_v1
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,7 @@ class Landing : AppCompatActivity() {
             when(it.itemId) {
                 R.id.home -> replaceFragment(Home())
                 R.id.transactions -> replaceFragment(Transactions())
+                R.id.addTransaction -> openAddItem()
                 R.id.reports -> replaceFragment(Reports())
                 R.id.settings -> replaceFragment(Settings())
                 else -> {}
@@ -42,5 +44,12 @@ class Landing : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frameLayout, fragment)
         fragmentTransaction.commit()
+    }
+
+    //method to open the new transaction activity
+    //Kgothatso Theko
+    private fun openAddItem() {
+        val intent = Intent(this, AddItemActivity::class.java)
+        startActivity(intent)
     }
 }
