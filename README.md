@@ -74,6 +74,8 @@ This app provides a user-friendly platform to monitor and control personal finan
 
 ## API Endpoints
 
+- Live environment - https://crud-a-pi.vercel.app/
+  
 The following are the key REST API endpoints:
 
 - **POST** `/add-items`: Create a new transaction.
