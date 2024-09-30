@@ -80,31 +80,29 @@
         android:text="@string/sign_up"
         android:backgroundTint="@color/greenThem"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="@string/sign_up_options"
-        android:textSize="20sp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginTop="20dp">
-        <ImageView
-            android:id="@+id/google1"
-            android:layout_width="70dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="20dp"
-            android:src="@drawable/google_icon"/>
-        <ImageView
-            android:id="@+id/facebook1"
-            android:layout_width="70dp"
-            android:layout_height="100dp"
-            android:src="@drawable/facebook_icon"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/already_have_an_account"
+            android:textSize="20sp"
+            android:layout_marginEnd="10dp"/>
+        <TextView
+            android:id="@+id/signInText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/greenThem"
+            android:text="@string/sign_in"
+            android:textSize="20sp"/>
     </LinearLayout>
+
+
 
 </LinearLayout>

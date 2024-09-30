@@ -14,4 +14,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_transaction">Add Transaction</string>
     <string name="sign_up_options">Sign-Up-Options:</string>
+    <string name="default_web_client_id">524367252822-93lbmsj4kilm6l6m95scfkraso4vpcr7.apps.googleusercontent.com</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="welcome">Welcome</string>
+    <string name="transactions">Transactions</string>
+    <string name="budgets">Budgets</string>
+    <string name="reports">Reports</string>
+    <string name="add">add</string>
+    <string name="coming_soon">Coming Soon</string>
 </resources>

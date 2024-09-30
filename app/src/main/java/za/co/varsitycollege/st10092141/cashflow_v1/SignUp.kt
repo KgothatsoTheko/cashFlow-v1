@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -18,6 +19,7 @@ class SignUp : AppCompatActivity() {
     private lateinit var email: EditText
     private lateinit var password1: EditText
     private lateinit var password2: EditText
+    private lateinit var signInText: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +33,17 @@ class SignUp : AppCompatActivity() {
         email = findViewById(R.id.email)
         password1 = findViewById(R.id.password1)
         password2 = findViewById(R.id.password2)
+        signInText = findViewById(R.id.signInText)
 
-        // Set signUp button click listener
+        // Set signUp button click listener to call the registerUser method
         signUp.setOnClickListener {
             registerUser()
+        }
+
+        // Set signInText to send to another activity
+        signInText.setOnClickListener {
+            val intent = Intent(this@SignUp, SignIn::class.java)
+            startActivity(intent)
         }
     }
 

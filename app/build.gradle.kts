@@ -44,6 +44,9 @@ android {
 
 dependencies {
 
+    // Import the BoM for the Firebase platform
+    implementation(platform(libs.firebase.bom))
+    implementation (libs.play.services.auth)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

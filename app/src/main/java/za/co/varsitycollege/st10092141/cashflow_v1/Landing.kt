@@ -19,23 +19,25 @@ class Landing : AppCompatActivity() {
         setContentView(binding.root)
         replaceFragment(Home())
 
+        //method to change navigation depending on which item is selected (Add on from Dima Ps method⬇️)
         binding.bottomNavigationView.setOnItemSelectedListener{
             when(it.itemId) {
                 R.id.home -> replaceFragment(Home())
+                R.id.transactions -> replaceFragment(Transactions())
+                R.id.reports -> replaceFragment(Reports())
                 R.id.settings -> replaceFragment(Settings())
-
-                else -> {
-
-                }
+                else -> {}
             }
-
             true
         }
 
     }
 
-    //method to replace the default frame layout
-    private fun replaceFragment(fragment : Fragment) {
+    //method to replace the default frame layout and change fragment adapted from stack overflow
+    //https://stackoverflow.com/questions/52318195/how-to-change-fragment-kotlin#:~:text=private%20fun%20replaceFragment(fragment:%20Fragment)%20{%20val%20transaction%20=%20supportFragmentManager.beginTransaction()%20transaction.replace(R.id.frame,
+    //Dima Ps
+    //https://stackoverflow.com/users/9859169/dimas-ps
+    public fun replaceFragment(fragment : Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frameLayout, fragment)

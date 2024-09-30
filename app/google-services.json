@@ -12,7 +12,20 @@
           "package_name": "za.co.varsitycollege.st10092141.cashflow_v1"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "524367252822-v6kdra0hnq8u7d0uvjli7pvalrclb52c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "za.co.varsitycollege.st10092141.cashflow_v1",
+            "certificate_hash": "ffc3418e3530dbe4cd050f25d955550a04946b96"
+          }
+        },
+        {
+          "client_id": "524367252822-93lbmsj4kilm6l6m95scfkraso4vpcr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCZ1HXW-p9Cxdvgf2jawYFadhJZjQCfS3o"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524367252822-93lbmsj4kilm6l6m95scfkraso4vpcr7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
