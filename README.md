@@ -21,7 +21,7 @@ This app provides a user-friendly platform to monitor and control personal finan
   - **Delete:** Remove outdated or incorrect financial records.
 - **Offline Mode:** Users can continue to add transactions even without internet connectivity. The app will automatically sync data with the server when reconnected.
 - **Real-time Notifications:** Receive alerts about low balances, upcoming bills, or savings milestones.
-- **Multi-language Support:** The app is available in both English and another local South African language (e.g. Xhosa or Afrikaans).
+- **Multi-language Support:** The app is available in both English and another local South African language (e.g. Zulu or Afrikaans).
 
 ## Tech Stack
 
@@ -69,7 +69,7 @@ This app provides a user-friendly platform to monitor and control personal finan
 
 ### Real-time Notifications:
 
-- The app notifies users of important events such as low balances or bills due soon.
+- The app notifies users of when a new transaction has been added.
 - These notifications are handled via Firebase Cloud Messaging (FCM).
 
 ## API Endpoints
@@ -85,7 +85,7 @@ The following are the key REST API endpoints:
 
 ## Future Enhancements
 
-- **Budgeting Tools:** Add features for monthly budgeting and automated savings suggestions.
+- **Budgeting Tools:** Provides insightful budgeting tips.
 - **Data Visualization:** Provide charts and graphs to help users visualize their spending trends.
 - **More Languages:** Expand multi-language support to include more South African languages like Zulu and Sotho.
 
