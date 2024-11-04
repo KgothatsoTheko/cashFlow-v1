@@ -47,16 +47,16 @@ This app provides a user-friendly platform to monitor and control personal finan
 ### GitHub Workflow: Generate APK & AAB
 This GitHub Actions workflow automates the process of building APK (Android Package) and AAB (Android App Bundle) files for the cashFlow Android application. It builds and stores these artifacts on GitHub whenever changes are pushed to any release/** branch. Additionally, the workflow can be triggered manually from the Actions tab.
 
--Workflow Configuration
-**Workflow Name: Generate APK & AAB (Upload - Create Artifact To GitHub Action)
-**Environment Variables:
+## Workflow Configuration
+- **Workflow Name: Generate APK & AAB (Upload - Create Artifact To GitHub Action)
+- **Environment Variables:
 main_project_module: The main module name (app) of the project.
 playstore_name: The identifier name for the app on the Play Store (cashFlow).
 -Triggers
 The workflow is triggered on:
 
-**Push Events: When changes are pushed to branches matching the release/** pattern (e.g., release/v1, release/v2).
-**Manual Trigger: It can be run manually from the Actions tab for ad-hoc builds.
+- **Push Events: When changes are pushed to branches matching the release/** pattern (e.g., release/v1, release/v2).
+- **Manual Trigger: It can be run manually from the Actions tab for ad-hoc builds.
 
 ## How to Download the Latest APK for the CashFlow App
 
