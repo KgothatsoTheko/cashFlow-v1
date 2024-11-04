@@ -91,14 +91,27 @@ The following are the key REST API endpoints:
 
 ## User Interface:
 
-![one](https://github.com/user-attachments/assets/dc076962-1d95-4c3d-98ec-43b1091e77c8)
+![one](https://github.com/user-attachments/assets/151ceeba-613d-44aa-9352-867047b669dd)
 
-![two](https://github.com/user-attachments/assets/6d05e73a-7ec9-4258-adc0-055a660f0f76)
+![two](https://github.com/user-attachments/assets/787115e2-11e7-4b4e-ba68-5a1dfee6a5f4)
 
-![three](https://github.com/user-attachments/assets/786e87d2-3aa9-474c-90d4-defe3208a123)
+![three](https://github.com/user-attachments/assets/b7cc240c-6340-4ba3-ba2d-8f63c5dad869)
 
-![four](https://github.com/user-attachments/assets/cb4acdf1-38f9-44fa-880f-d7150970238c)
+![four](https://github.com/user-attachments/assets/fa110153-8d6b-4543-a668-cf637f7d3fae)
 
-![five](https://github.com/user-attachments/assets/cd983f58-7569-404a-a84e-31cef5a7d04f)
+![five](https://github.com/user-attachments/assets/2c294c34-4d47-4e02-bd2d-07685695749c)
 
-![six](https://github.com/user-attachments/assets/3b006239-67f6-43a7-b43b-cd02596ee0f2)
+![six](https://github.com/user-attachments/assets/5a3d12d9-b4d5-4761-a2e2-d3a46b0d883b)
+
+![seven](https://github.com/user-attachments/assets/c4ba04a7-9e8a-4c08-a342-23970f25549c)
+
+![eight](https://github.com/user-attachments/assets/1a30b73c-50e9-4b4c-b0f1-5b9952c68a66)
+
+## Release/v1 - (POE - New Features)
+
+- Completed transactions page and functinality (showing the income/expense amount).
+- Added real time push notifications, when new transaction is made, push notification is sent to clients subscribed.
+- Added biometric authentication (fingerprint login).
+- Added multi-language feature.
+- Added budgeting tips functionality and UI.
+- Added sign out feature in settings
