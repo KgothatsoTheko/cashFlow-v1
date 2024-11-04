@@ -66,7 +66,7 @@ Every time we release a new version of the CashFlow app, a build process is trig
 
 2. **Select the "Actions" Tab**: In the repository menu, click on the **Actions** tab. This is where all automated workflows, including the APK generation, are stored.
 
-3. **Find the Latest Workflow Run**: Look for the latest workflow run labeled **"Generate APK & AAB"** on a `release/*` branch. This will indicate a recent release or update.
+3. **Find the Latest Workflow Run**: Look for the latest workflow run labeled **"app updates poe"** on a `release/*` branch. This will indicate a recent release or update.
 
 4. **Open the Workflow Details**: Click on the workflow run to view more details.
 
