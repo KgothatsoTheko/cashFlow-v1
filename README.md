@@ -44,6 +44,42 @@ This app provides a user-friendly platform to monitor and control personal finan
 - **Android Studio:** IDE for Android development.
 - **MongoDB Atlas:** Cloud-based storage for the app's backend data.
 
+### GitHub Workflow: Generate APK & AAB
+This GitHub Actions workflow automates the process of building APK (Android Package) and AAB (Android App Bundle) files for the cashFlow Android application. It builds and stores these artifacts on GitHub whenever changes are pushed to any release/** branch. Additionally, the workflow can be triggered manually from the Actions tab.
+
+-Workflow Configuration
+**Workflow Name: Generate APK & AAB (Upload - Create Artifact To GitHub Action)
+**Environment Variables:
+main_project_module: The main module name (app) of the project.
+playstore_name: The identifier name for the app on the Play Store (cashFlow).
+-Triggers
+The workflow is triggered on:
+
+**Push Events: When changes are pushed to branches matching the release/** pattern (e.g., release/v1, release/v2).
+**Manual Trigger: It can be run manually from the Actions tab for ad-hoc builds.
+
+## How to Download the Latest APK for the CashFlow App
+
+Every time we release a new version of the CashFlow app, a build process is triggered to automatically generate and store the APK file on GitHub. Here’s how you, as an end user, can download the latest APK:
+
+1. **Go to the GitHub Repository**: Navigate to the main repository page where the app's code and releases are hosted.
+
+2. **Select the "Actions" Tab**: In the repository menu, click on the **Actions** tab. This is where all automated workflows, including the APK generation, are stored.
+
+3. **Find the Latest Workflow Run**: Look for the latest workflow run labeled **"Generate APK & AAB"** on a `release/*` branch. This will indicate a recent release or update.
+
+4. **Open the Workflow Details**: Click on the workflow run to view more details.
+
+5. **Download the APK Artifact**:
+   - Scroll down to the **Artifacts** section within the workflow details.
+   - Look for the file labeled something like: `[Date] - cashFlow - [version] - APK(s) debug/release generated`.
+   - Click on the artifact link to download the APK file directly to your device.
+
+6. **Install the APK**: Once downloaded, open the APK file on your Android device and follow the prompts to install the latest version of CashFlow.
+
+This process ensures that you have access to the latest, verified version of the app directly from our secure GitHub repository.
+
+
 ## How It Works
 
 ### User Registration and Authentication:
