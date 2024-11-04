@@ -44,6 +44,9 @@ android {
 
 dependencies {
 
+    //fingerprint
+    implementation ("androidx.biometric:biometric:1.1.0")
+
     // ViewModel
     implementation (libs.androidx.lifecycle.lifecycle.viewmodel.ktx)  // Use the latest version
 
@@ -72,6 +75,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.auth)
     implementation(libs.androidx.preference)
+    implementation(libs.firebase.messaging)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

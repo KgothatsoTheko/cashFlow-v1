@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings">izilungiselelo</string>
+    <string name="change_currency">Shintsha imali</string>
+    <string name="push_notifications">Izaziso zokuthumela</string>
+    <string name="language">Ulimi</string>
+    <string name="sign_out">Phuma</string>
+</resources>

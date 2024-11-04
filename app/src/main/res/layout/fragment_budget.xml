@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".BudgetFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:text="Budget Tips:"
+        android:layout_marginBottom="10dp"/>
+
+    <!-- 20/30/50 Budget Tip -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:text="20/30/50 Savings Tip:\n\nDivide your income to better manage your finances:\n- 20% for savings and investments\n- 30% for flexible spending (like entertainment)\n- 50% for essentials (such as rent, groceries, and utilities)\n\nThis approach can help ensure you’re saving regularly while covering both necessities and lifestyle expenses."
+        android:background="#e0e0e0"
+        android:layout_marginTop="10dp"/>
+
+</LinearLayout>
