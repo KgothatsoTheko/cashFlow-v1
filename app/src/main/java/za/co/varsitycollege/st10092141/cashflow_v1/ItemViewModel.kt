@@ -15,7 +15,7 @@ class ItemViewModel : ViewModel() {
 
     val addItem = liveData(Dispatchers.IO) {
         // first method to add transaction
-        val item = Item(name = "Sample Item", description = "This is a sample.")
+        val item = Item(name = "Sample Item", description = "This is a sample.", amount = "250")
         val response = repository.addItem(item)
         emit(response)
     }

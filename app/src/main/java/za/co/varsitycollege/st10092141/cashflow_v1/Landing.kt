@@ -1,9 +1,13 @@
 package za.co.varsitycollege.st10092141.cashflow_v1
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
@@ -19,6 +23,17 @@ class Landing : AppCompatActivity() {
         binding = ActivityLandingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         replaceFragment(Home())
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                "task_notifications",
+                "Task Notifications",
+                NotificationManager.IMPORTANCE_HIGH
+            )
+            val manager = getSystemService(NotificationManager::class.java)
+            manager?.createNotificationChannel(channel)
+        }
+
 
         //method to change navigation depending on which item is selected (Add on from Dima Ps method⬇️)
         binding.bottomNavigationView.setOnItemSelectedListener{
@@ -50,6 +65,32 @@ class Landing : AppCompatActivity() {
     //Kgothatso Theko
     private fun openAddItem() {
         val intent = Intent(this, AddItemActivity::class.java)
-        startActivity(intent)
+        startActivityForResult(intent, ADD_ITEM_REQUEST_CODE)
     }
+
+    // Handle the result in `onActivityResult`
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == ADD_ITEM_REQUEST_CODE && resultCode == RESULT_OK) {
+            // Return to the previous fragment and show a notification
+            showCompletionNotification()
+        }
+    }
+
+    private fun showCompletionNotification() {
+        val notificationBuilder = NotificationCompat.Builder(this, "task_notifications")
+            .setSmallIcon(R.drawable.icon)
+            .setContentTitle("Item Added")
+            .setContentText("You successfully added a new item.")
+            .setAutoCancel(true)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.notify(1, notificationBuilder.build())
+    }
+
+    companion object {
+        const val ADD_ITEM_REQUEST_CODE = 1001
+    }
+
 }

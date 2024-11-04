@@ -17,6 +17,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
+import androidx.biometric.BiometricManager
+import androidx.biometric.BiometricPrompt
+import androidx.core.content.ContextCompat
 
 
 class SignIn : AppCompatActivity() {
@@ -51,6 +54,11 @@ class SignIn : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+
+        val fingerprintButton: ImageView = findViewById(R.id.fingerprint)
+        fingerprintButton.setOnClickListener {
+            checkBiometricAvailability()
+        }
 
         // Initialize FirebaseAuth instance
         auth = FirebaseAuth.getInstance()
@@ -142,4 +150,48 @@ class SignIn : AppCompatActivity() {
         startActivity(intent)
         finish() // Close the sign-in activity
     }
+
+    private fun checkBiometricAvailability() {
+        val biometricManager = BiometricManager.from(this)
+        when (biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)) {
+            BiometricManager.BIOMETRIC_SUCCESS -> initiateBiometricPrompt()
+            BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE ->
+                Toast.makeText(this, "No biometric hardware available", Toast.LENGTH_SHORT).show()
+            BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE ->
+                Toast.makeText(this, "Biometric hardware unavailable", Toast.LENGTH_SHORT).show()
+            BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED ->
+                Toast.makeText(this, "No biometric enrolled", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun initiateBiometricPrompt() {
+        val executor = ContextCompat.getMainExecutor(this)
+        val biometricPrompt = BiometricPrompt(this, executor, object : BiometricPrompt.AuthenticationCallback() {
+            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                super.onAuthenticationSucceeded(result)
+                Toast.makeText(this@SignIn, "Authentication succeeded!", Toast.LENGTH_SHORT).show()
+                navigateToLanding() // Navigate to the next activity
+            }
+
+            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                super.onAuthenticationError(errorCode, errString)
+                Toast.makeText(this@SignIn, "Authentication error: $errString", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onAuthenticationFailed() {
+                super.onAuthenticationFailed()
+                Toast.makeText(this@SignIn, "Authentication failed", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        val promptInfo = BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Biometric Authentication")
+            .setSubtitle("Authenticate using your fingerprint")
+            .setNegativeButtonText("Cancel")
+            .build()
+
+        biometricPrompt.authenticate(promptInfo)
+    }
+
+
 }

@@ -93,11 +93,11 @@
             android:layout_height="100dp"
             android:layout_marginEnd="20dp"
             android:src="@drawable/google_icon"/>
-<!--        <ImageView-->
-<!--            android:id="@+id/facebook2"-->
-<!--            android:layout_width="70dp"-->
-<!--            android:layout_height="100dp"-->
-<!--            android:src="@drawable/facebook_icon"/>-->
+        <ImageView
+            android:id="@+id/fingerprint"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:src="@drawable/fingerprint_1309842"/>
     </LinearLayout>
 
 </LinearLayout>

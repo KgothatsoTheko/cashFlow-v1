@@ -17,7 +17,7 @@ class Home : Fragment() {
 
         // Get reference to the LinearLayouts
         val transactionPage = view.findViewById<LinearLayout>(R.id.transactionPage)
-//        val budgetPage = view.findViewById<LinearLayout>(R.id.budgetPage)
+        val budgetPage = view.findViewById<LinearLayout>(R.id.budgetPage)
         val settingsPage = view.findViewById<LinearLayout>(R.id.settingsPage)
         val reportsPage = view.findViewById<LinearLayout>(R.id.reportsPage)
 
@@ -26,9 +26,9 @@ class Home : Fragment() {
         transactionPage.setOnClickListener {
             (activity as? Landing)?.replaceFragment(Transactions())
         }
-//        budgetPage.setOnClickListener {
-//            (activity as? Landing)?.replaceFragment(BudgetFragment())
-//        }
+        budgetPage.setOnClickListener {
+            (activity as? Landing)?.replaceFragment(BudgetFragment())
+        }
         settingsPage.setOnClickListener {
             (activity as? Landing)?.replaceFragment(Settings())
         }
